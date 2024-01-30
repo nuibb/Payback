@@ -8,5 +8,10 @@
 import Foundation
 
 final class TransactionListViewModel: ObservableObject {
+    let apiService: ApiService
+    
+    init(apiService: ApiService) {
+        self.apiService = apiService
+    }
 
 }

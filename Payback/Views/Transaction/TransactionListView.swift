@@ -15,14 +15,17 @@ struct TransactionListView: View {
             VStack {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .leading) {
+                        
                     }
                 }
             }
-            .navigationBarTitle(Text(AppConstants.appTitle), displayMode: .inline)
+            .navigationBarTitle(Text(String(localized: "Transactions")), displayMode: .inline)
         }
     }
 }
 
 #Preview {
-    TransactionListView(viewModel: TransactionListViewModel())
+    TransactionListView(
+        viewModel: TransactionListViewModel(apiService: ApiService())
+    )
 }

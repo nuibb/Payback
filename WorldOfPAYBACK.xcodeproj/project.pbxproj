@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CE213FB2B68E6E8007A1D30 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE213FA2B68E6E8007A1D30 /* RootView.swift */; };
+		3CE214042B68EB17007A1D30 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE214032B68EB16007A1D30 /* TransactionListView.swift */; };
+		3CE214082B68EB68007A1D30 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE214072B68EB68007A1D30 /* FeedView.swift */; };
+		3CE2140A2B68EB8D007A1D30 /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE214092B68EB8D007A1D30 /* ShoppingView.swift */; };
+		3CE2140C2B68EBA1007A1D30 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE2140B2B68EBA1007A1D30 /* SettingsView.swift */; };
+		3CE2140E2B68EF89007A1D30 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE2140D2B68EF89007A1D30 /* TransactionListViewModel.swift */; };
+		3CE214122B68F18E007A1D30 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE214112B68F18E007A1D30 /* AppConstants.swift */; };
+		3CE214142B68F4ED007A1D30 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3CE214132B68F4ED007A1D30 /* Localizable.xcstrings */; };
 		523CD4CD2B67DD39007D106D /* PaybackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CD4CC2B67DD39007D106D /* PaybackApp.swift */; };
-		523CD4CF2B67DD39007D106D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CD4CE2B67DD39007D106D /* ContentView.swift */; };
-		523CD4D12B67DD39007D106D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CD4D02B67DD39007D106D /* Item.swift */; };
 		523CD4D32B67DD3A007D106D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523CD4D22B67DD3A007D106D /* Assets.xcassets */; };
 		523CD4D62B67DD3A007D106D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523CD4D52B67DD3A007D106D /* Preview Assets.xcassets */; };
 		523CD4E02B67DD3A007D106D /* PaybackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CD4DF2B67DD3A007D106D /* PaybackTests.swift */; };
@@ -35,15 +41,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		523CD4C92B67DD39007D106D /* Payback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CE213FA2B68E6E8007A1D30 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		3CE214032B68EB16007A1D30 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+		3CE214072B68EB68007A1D30 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		3CE214092B68EB8D007A1D30 /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
+		3CE2140B2B68EBA1007A1D30 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3CE2140D2B68EF89007A1D30 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		3CE214112B68F18E007A1D30 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		3CE214132B68F4ED007A1D30 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		523CD4C92B67DD39007D106D /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		523CD4CC2B67DD39007D106D /* PaybackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackApp.swift; sourceTree = "<group>"; };
-		523CD4CE2B67DD39007D106D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		523CD4D02B67DD39007D106D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		523CD4D22B67DD3A007D106D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		523CD4D52B67DD3A007D106D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		523CD4DB2B67DD3A007D106D /* PaybackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaybackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		523CD4DB2B67DD3A007D106D /* WorldOfPAYBACKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfPAYBACKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		523CD4DF2B67DD3A007D106D /* PaybackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackTests.swift; sourceTree = "<group>"; };
-		523CD4E52B67DD3A007D106D /* PaybackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaybackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		523CD4E52B67DD3A007D106D /* WorldOfPAYBACKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfPAYBACKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		523CD4E92B67DD3A007D106D /* PaybackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackUITests.swift; sourceTree = "<group>"; };
 		523CD4EB2B67DD3A007D106D /* PaybackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +85,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CE213F92B68E6AA007A1D30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CE213FF2B68EA94007A1D30 /* Transaction */,
+				3CE214002B68EA9F007A1D30 /* Feed */,
+				3CE214012B68EAA6007A1D30 /* Shopping */,
+				3CE214022B68EAAD007A1D30 /* Settings */,
+				3CE213FC2B68E6FF007A1D30 /* RootView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3CE213FC2B68E6FF007A1D30 /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				523CD4CC2B67DD39007D106D /* PaybackApp.swift */,
+				3CE213FA2B68E6E8007A1D30 /* RootView.swift */,
+			);
+			path = RootView;
+			sourceTree = "<group>";
+		};
+		3CE213FF2B68EA94007A1D30 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				3CE214032B68EB16007A1D30 /* TransactionListView.swift */,
+				3CE2140D2B68EF89007A1D30 /* TransactionListViewModel.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		3CE214002B68EA9F007A1D30 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				3CE214072B68EB68007A1D30 /* FeedView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		3CE214012B68EAA6007A1D30 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				3CE214092B68EB8D007A1D30 /* ShoppingView.swift */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		3CE214022B68EAAD007A1D30 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3CE2140B2B68EBA1007A1D30 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3CE2140F2B68F139007A1D30 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3CE214112B68F18E007A1D30 /* AppConstants.swift */,
+				3CE214132B68F4ED007A1D30 /* Localizable.xcstrings */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3CE214102B68F144007A1D30 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 		523CD4C02B67DD38007D106D = {
 			isa = PBXGroup;
 			children = (
@@ -86,9 +168,9 @@
 		523CD4CA2B67DD39007D106D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				523CD4C92B67DD39007D106D /* Payback.app */,
-				523CD4DB2B67DD3A007D106D /* PaybackTests.xctest */,
-				523CD4E52B67DD3A007D106D /* PaybackUITests.xctest */,
+				523CD4C92B67DD39007D106D /* WorldOfPAYBACK.app */,
+				523CD4DB2B67DD3A007D106D /* WorldOfPAYBACKTests.xctest */,
+				523CD4E52B67DD3A007D106D /* WorldOfPAYBACKUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,9 +178,9 @@
 		523CD4CB2B67DD39007D106D /* Payback */ = {
 			isa = PBXGroup;
 			children = (
-				523CD4CC2B67DD39007D106D /* PaybackApp.swift */,
-				523CD4CE2B67DD39007D106D /* ContentView.swift */,
-				523CD4D02B67DD39007D106D /* Item.swift */,
+				3CE214102B68F144007A1D30 /* Configs */,
+				3CE2140F2B68F139007A1D30 /* Utilities */,
+				3CE213F92B68E6AA007A1D30 /* Views */,
 				523CD4D22B67DD3A007D106D /* Assets.xcassets */,
 				523CD4D42B67DD3A007D106D /* Preview Content */,
 			);
@@ -133,9 +215,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		523CD4C82B67DD39007D106D /* Payback */ = {
+		523CD4C82B67DD39007D106D /* WorldOfPAYBACK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 523CD4EF2B67DD3A007D106D /* Build configuration list for PBXNativeTarget "Payback" */;
+			buildConfigurationList = 523CD4EF2B67DD3A007D106D /* Build configuration list for PBXNativeTarget "WorldOfPAYBACK" */;
 			buildPhases = (
 				523CD4C52B67DD39007D106D /* Sources */,
 				523CD4C62B67DD39007D106D /* Frameworks */,
@@ -145,14 +227,14 @@
 			);
 			dependencies = (
 			);
-			name = Payback;
+			name = WorldOfPAYBACK;
 			productName = Payback;
-			productReference = 523CD4C92B67DD39007D106D /* Payback.app */;
+			productReference = 523CD4C92B67DD39007D106D /* WorldOfPAYBACK.app */;
 			productType = "com.apple.product-type.application";
 		};
-		523CD4DA2B67DD3A007D106D /* PaybackTests */ = {
+		523CD4DA2B67DD3A007D106D /* WorldOfPAYBACKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 523CD4F22B67DD3A007D106D /* Build configuration list for PBXNativeTarget "PaybackTests" */;
+			buildConfigurationList = 523CD4F22B67DD3A007D106D /* Build configuration list for PBXNativeTarget "WorldOfPAYBACKTests" */;
 			buildPhases = (
 				523CD4D72B67DD3A007D106D /* Sources */,
 				523CD4D82B67DD3A007D106D /* Frameworks */,
@@ -163,14 +245,14 @@
 			dependencies = (
 				523CD4DD2B67DD3A007D106D /* PBXTargetDependency */,
 			);
-			name = PaybackTests;
+			name = WorldOfPAYBACKTests;
 			productName = PaybackTests;
-			productReference = 523CD4DB2B67DD3A007D106D /* PaybackTests.xctest */;
+			productReference = 523CD4DB2B67DD3A007D106D /* WorldOfPAYBACKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		523CD4E42B67DD3A007D106D /* PaybackUITests */ = {
+		523CD4E42B67DD3A007D106D /* WorldOfPAYBACKUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 523CD4F52B67DD3A007D106D /* Build configuration list for PBXNativeTarget "PaybackUITests" */;
+			buildConfigurationList = 523CD4F52B67DD3A007D106D /* Build configuration list for PBXNativeTarget "WorldOfPAYBACKUITests" */;
 			buildPhases = (
 				523CD4E12B67DD3A007D106D /* Sources */,
 				523CD4E22B67DD3A007D106D /* Frameworks */,
@@ -181,9 +263,9 @@
 			dependencies = (
 				523CD4E72B67DD3A007D106D /* PBXTargetDependency */,
 			);
-			name = PaybackUITests;
+			name = WorldOfPAYBACKUITests;
 			productName = PaybackUITests;
-			productReference = 523CD4E52B67DD3A007D106D /* PaybackUITests.xctest */;
+			productReference = 523CD4E52B67DD3A007D106D /* WorldOfPAYBACKUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +291,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 523CD4C42B67DD38007D106D /* Build configuration list for PBXProject "Payback" */;
+			buildConfigurationList = 523CD4C42B67DD38007D106D /* Build configuration list for PBXProject "WorldOfPAYBACK" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -222,9 +304,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				523CD4C82B67DD39007D106D /* Payback */,
-				523CD4DA2B67DD3A007D106D /* PaybackTests */,
-				523CD4E42B67DD3A007D106D /* PaybackUITests */,
+				523CD4C82B67DD39007D106D /* WorldOfPAYBACK */,
+				523CD4DA2B67DD3A007D106D /* WorldOfPAYBACKTests */,
+				523CD4E42B67DD3A007D106D /* WorldOfPAYBACKUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +318,7 @@
 			files = (
 				523CD4D62B67DD3A007D106D /* Preview Assets.xcassets in Resources */,
 				523CD4D32B67DD3A007D106D /* Assets.xcassets in Resources */,
+				3CE214142B68F4ED007A1D30 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,8 +343,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523CD4CF2B67DD39007D106D /* ContentView.swift in Sources */,
-				523CD4D12B67DD39007D106D /* Item.swift in Sources */,
+				3CE2140C2B68EBA1007A1D30 /* SettingsView.swift in Sources */,
+				3CE2140E2B68EF89007A1D30 /* TransactionListViewModel.swift in Sources */,
+				3CE213FB2B68E6E8007A1D30 /* RootView.swift in Sources */,
+				3CE214122B68F18E007A1D30 /* AppConstants.swift in Sources */,
+				3CE214042B68EB17007A1D30 /* TransactionListView.swift in Sources */,
+				3CE2140A2B68EB8D007A1D30 /* ShoppingView.swift in Sources */,
+				3CE214082B68EB68007A1D30 /* FeedView.swift in Sources */,
 				523CD4CD2B67DD39007D106D /* PaybackApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,12 +376,12 @@
 /* Begin PBXTargetDependency section */
 		523CD4DD2B67DD3A007D106D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 523CD4C82B67DD39007D106D /* Payback */;
+			target = 523CD4C82B67DD39007D106D /* WorldOfPAYBACK */;
 			targetProxy = 523CD4DC2B67DD3A007D106D /* PBXContainerItemProxy */;
 		};
 		523CD4E72B67DD3A007D106D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 523CD4C82B67DD39007D106D /* Payback */;
+			target = 523CD4C82B67DD39007D106D /* WorldOfPAYBACK */;
 			targetProxy = 523CD4E62B67DD3A007D106D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -492,7 +580,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Payback.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Payback";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldOfPAYBACK.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WorldOfPAYBACK";
 			};
 			name = Debug;
 		};
@@ -512,7 +600,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Payback.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Payback";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldOfPAYBACK.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WorldOfPAYBACK";
 			};
 			name = Release;
 		};
@@ -555,7 +643,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		523CD4C42B67DD38007D106D /* Build configuration list for PBXProject "Payback" */ = {
+		523CD4C42B67DD38007D106D /* Build configuration list for PBXProject "WorldOfPAYBACK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				523CD4ED2B67DD3A007D106D /* Debug */,
@@ -564,7 +652,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		523CD4EF2B67DD3A007D106D /* Build configuration list for PBXNativeTarget "Payback" */ = {
+		523CD4EF2B67DD3A007D106D /* Build configuration list for PBXNativeTarget "WorldOfPAYBACK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				523CD4F02B67DD3A007D106D /* Debug */,
@@ -573,7 +661,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		523CD4F22B67DD3A007D106D /* Build configuration list for PBXNativeTarget "PaybackTests" */ = {
+		523CD4F22B67DD3A007D106D /* Build configuration list for PBXNativeTarget "WorldOfPAYBACKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				523CD4F32B67DD3A007D106D /* Debug */,
@@ -582,7 +670,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		523CD4F52B67DD3A007D106D /* Build configuration list for PBXNativeTarget "PaybackUITests" */ = {
+		523CD4F52B67DD3A007D106D /* Build configuration list for PBXNativeTarget "WorldOfPAYBACKUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				523CD4F62B67DD3A007D106D /* Debug */,

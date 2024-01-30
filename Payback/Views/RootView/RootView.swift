@@ -10,7 +10,7 @@ import SwiftUI
 struct RootView: View {
     var body: some View {
         TabView {
-            TransactionListView(viewModel: TransactionListViewModel())
+            TransactionListView(viewModel: TransactionListViewModel(apiService: ApiService()))
                 .tabItem {
                     Label("Transaction", systemImage: "dollarsign.arrow.circlepath")
                 }

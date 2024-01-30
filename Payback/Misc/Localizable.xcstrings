@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Feed" : {
+
+    },
+    "Hello, World!" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Shopping" : {
+
+    },
+    "Transaction" : {
+
+    },
+    "Transactions" : {
+
+    }
+  },
+  "version" : "1.0"
+}

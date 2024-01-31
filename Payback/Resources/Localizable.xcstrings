@@ -4,10 +4,16 @@
     "%@ " : {
 
     },
+    "Description" : {
+
+    },
     "Feed" : {
 
     },
     "Hello, World!" : {
+
+    },
+    "Name" : {
 
     },
     "Settings" : {
@@ -16,7 +22,13 @@
     "Shopping" : {
 
     },
+    "Total Amount: %@" : {
+
+    },
     "Transaction" : {
+
+    },
+    "Transaction Details" : {
 
     },
     "Transactions" : {

@@ -10,7 +10,7 @@ import Foundation
 struct MockDataProvider: TransactionDataProvider {
     let networkMonitor: NetworkMonitor = NetworkMonitor()
 
-    func fetchTransactions() async -> Result<TransactionList, RequestError> {
+    func fetchTransactions() async -> Result<Transactions, RequestError> {
         if self.networkMonitor.isConnected {
             return Bundle.main.decode("data.json")
         } else {

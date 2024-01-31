@@ -8,13 +8,13 @@
 import Foundation
 
 protocol TransactionDataProvider: HTTPClient {
-    func fetchTransactions() async -> Swift.Result<TransactionList, RequestError>
+    func fetchTransactions() async -> Swift.Result<Transactions, RequestError>
 }
 
 extension TransactionDataProvider {
-    func fetchTransactions() async -> Swift.Result<TransactionList, RequestError> {
+    func fetchTransactions() async -> Swift.Result<Transactions, RequestError> {
         if self.networkMonitor.isConnected {
-            return await getRequest(endpoint: TransactionEndPoints.transactions, responseModel: TransactionList.self)
+            return await getRequest(endpoint: TransactionEndPoints.transactions, responseModel: Transactions.self)
         } else {
             return .failure(.networkNotAvailable)
         }

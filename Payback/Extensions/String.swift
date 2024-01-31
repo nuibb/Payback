@@ -14,11 +14,6 @@ extension Optional where Wrapped == String {
 }
 
 extension String {
-    var formatDateString: String {
-        var dateFormat = "EEEE, d MMMM YYYY"
-        return self.toDateFromTimezone().toString(format: dateFormat)
-    }
-
     func toDateFromTimezone() -> Date {
         let iso = ISO8601DateFormatter()
         iso.formatOptions = [.withTimeZone, .withFullDate, .withFullTime, .withFractionalSeconds]

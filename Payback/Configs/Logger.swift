@@ -38,7 +38,7 @@ struct Logger {
                     function: String = #function, line: Int = #line, toFile: Bool = false) {
         guard Config.log.enabled && !isProduction else { return }
         
-        var output = "\(type) \(Date().toString(format: "yyyy-dd-MM HH:mm:ss.SSS")) "
+        var output = "\(type) \(Date().toString())"
         let filename = file.components(separatedBy: "/").last.unwrapped
         output += "\(filename):\(function):\(line) \(message)"
         print(output)

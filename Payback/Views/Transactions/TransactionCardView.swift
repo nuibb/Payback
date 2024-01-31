@@ -13,37 +13,32 @@ struct TransactionCardView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .top, spacing: 0) {
-                Text(transaction.partnerDisplayName)
+                Text(transaction.displayName)
                     .foregroundColor(.white)
                     .font(.circular(.headline))
 
                 Spacer()
 
-                if let currency = transaction.transactionDetail?.value?.currency, !currency.isEmpty {
-                    Text("\(currency) ")
-                        .foregroundColor(.white)
-                        .font(.circular(.headline))
-                }
-
-                if let amount = transaction.transactionDetail?.value?.amount, amount >= 0 {
-                    Text(String(amount))
+                if transaction.amount > 0 {
+                    if !transaction.currency.isEmpty {
+                        Text("\(transaction.currency) ")
+                            .foregroundColor(.white)
+                            .font(.circular(.headline))
+                    }
+                    
+                    Text(String(transaction.amount))
                         .foregroundColor(.white)
                         .font(.circular(.headline).weight(.bold))
                 }
             }
 
-            Text((transaction.transactionDetail?.bookingDate ?? "").formatDateString)
+            Text(transaction.bookingDate.toString())
                 .foregroundColor(.white)
                 .font(.circular(.subheadline))
 
-            Text(transaction.transactionDetail?.description ?? "")
+            Text(transaction.description)
                 .foregroundColor(.white)
                 .font(.circular(.subheadline))
-
         }
     }
 }
-
-//#Preview {
-//    TransactionCardView(transaction: Transaction(from: <#Decoder#>))
-//}

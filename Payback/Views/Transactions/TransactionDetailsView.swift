@@ -11,12 +11,27 @@ struct TransactionDetailsView: View {
     let transaction: Transaction
     
     var body: some View {
-        VStack {
-            TransactionCardView(transaction: transaction)
+        VStack(alignment: .center, spacing: 8) {
+            Text("Name")
+                .foregroundColor(.white)
+                .font(.circular(.footnote))
+            
+            Text(transaction.displayName)
+                .foregroundColor(.white)
+                .font(.circular(.headline))
+                .padding(.bottom)
+            
+            Text("Description")
+                .foregroundColor(.white)
+                .font(.circular(.footnote))
+            
+            Text(transaction.description)
+                .foregroundColor(.white)
+                .font(.circular(.headline))
         }
+        .frame(width: 250, height: 250)
+        .background(Color.primaryColor)
+        .cornerRadius(8)
+        .navigationBarTitle(Text(String(localized: "Transaction Details")), displayMode: .inline)
     }
 }
-
-//#Preview {
-//    TransactionDetailsView(transaction: Transaction())
-//}

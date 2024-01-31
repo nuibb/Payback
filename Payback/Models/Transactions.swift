@@ -7,9 +7,9 @@
 
 import Foundation
 
-/// INFO: Ensure  sustainable API response processing, handle any kind of missing value/property from the server
-struct TransactionList: Decodable {
-    let items: [Transaction]
+/// MARK: Handle any kind of missing value/property from the server
+struct Transactions: Decodable {
+    let items: [TransactionItem]
 
     enum CodingKeys: String, CodingKey {
         case items
@@ -17,11 +17,11 @@ struct TransactionList: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        items = try container.decodeIfPresent([Transaction].self, forKey: .items) ?? []
+        items = try container.decodeIfPresent([TransactionItem].self, forKey: .items) ?? []
     }
 }
 
-struct Transaction: Decodable {
+struct TransactionItem: Decodable {
     let partnerDisplayName: String
     let alias: Alias
     let category: Int
@@ -80,7 +80,7 @@ struct Value: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        amount = try container.decodeIfPresent(Int.self, forKey: .amount) ?? -1
+        amount = try container.decodeIfPresent(Int.self, forKey: .amount) ?? 0
         currency = try container.decodeIfPresent(String.self, forKey: .currency) ?? ""
     }
 }

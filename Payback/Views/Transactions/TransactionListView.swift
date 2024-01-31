@@ -15,11 +15,18 @@ struct TransactionListView: View {
             VStack {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .leading) {
-                        
+                        ForEach(viewModel.transactions, id:\.alias.reference) { transaction in
+                            NavigationLink(destination: TransactionDetailsView(transaction: transaction)) {
+                                TransactionCardView(transaction: transaction)
+                            }
+                        }
                     }
                 }
             }
             .navigationBarTitle(Text(String(localized: "Transactions")), displayMode: .inline)
+            .onAppear() {
+                viewModel.fetchTransactions()
+            }
         }
     }
 }

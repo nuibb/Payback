@@ -22,7 +22,7 @@ extension Endpoint {
     }
     
     var host: String {
-        return "api.payback.com"
+        return "api-test.payback.com"
     }
     
     var header: [String: String] {

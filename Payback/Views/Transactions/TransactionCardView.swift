@@ -19,13 +19,13 @@ struct TransactionCardView: View {
 
                 Spacer()
 
-                if let currency = transaction.transactionDetail?.value?.currency {
+                if let currency = transaction.transactionDetail?.value?.currency, !currency.isEmpty {
                     Text("\(currency) ")
                         .foregroundColor(.white)
                         .font(.circular(.headline))
                 }
 
-                if let amount = transaction.transactionDetail?.value?.amount {
+                if let amount = transaction.transactionDetail?.value?.amount, amount >= 0 {
                     Text(String(amount))
                         .foregroundColor(.white)
                         .font(.circular(.headline).weight(.bold))

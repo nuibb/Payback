@@ -16,7 +16,7 @@ struct TransactionDetailsView: View {
         }
     }
 }
-//
+
 //#Preview {
 //    TransactionDetailsView(transaction: Transaction())
 //}

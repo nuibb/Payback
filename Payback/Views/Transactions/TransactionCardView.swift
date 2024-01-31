@@ -12,24 +12,32 @@ struct TransactionCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .top) {
+            HStack(alignment: .top, spacing: 0) {
                 Text(transaction.partnerDisplayName)
-                    .foregroundColor(.textBlack)
+                    .foregroundColor(.white)
                     .font(.circular(.headline))
 
                 Spacer()
 
-                Text(transaction.transactionDetail?.value?.currency ?? "" + String(transaction.transactionDetail?.value?.amount ?? 0))
-                    .foregroundColor(.primaryColor)
-                    .font(.circular(.headline).weight(.semibold))
+                if let currency = transaction.transactionDetail?.value?.currency {
+                    Text("\(currency) ")
+                        .foregroundColor(.white)
+                        .font(.circular(.headline))
+                }
+
+                if let amount = transaction.transactionDetail?.value?.amount {
+                    Text(String(amount))
+                        .foregroundColor(.white)
+                        .font(.circular(.headline).weight(.bold))
+                }
             }
 
             Text((transaction.transactionDetail?.bookingDate ?? "").formatDateString)
-                .foregroundColor(.textBlack)
+                .foregroundColor(.white)
                 .font(.circular(.subheadline))
 
             Text(transaction.transactionDetail?.description ?? "")
-                .foregroundColor(.textBlack)
+                .foregroundColor(.white)
                 .font(.circular(.subheadline))
 
         }

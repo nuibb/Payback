@@ -18,11 +18,15 @@ struct TransactionListView: View {
                         ForEach(viewModel.transactions, id:\.alias.reference) { transaction in
                             NavigationLink(destination: TransactionDetailsView(transaction: transaction)) {
                                 TransactionCardView(transaction: transaction)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .cornerRadius(8)
                             }
                         }
                     }
                 }
             }
+            .padding()
             .navigationBarTitle(Text(String(localized: "Transactions")), displayMode: .inline)
             .onAppear() {
                 viewModel.fetchTransactions()

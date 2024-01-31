@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// MARK: Ensure  sustainable API response handling where any property can be missing from the server
+/// INFO: Ensure  sustainable API response processing, handle any kind of missing value/property from the server
 struct TransactionList: Decodable {
     let items: [Transaction]
 

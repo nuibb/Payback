@@ -33,6 +33,6 @@ struct TransactionListView: View {
 
 #Preview {
     TransactionListView(
-        viewModel: TransactionListViewModel(apiService: ApiService())
+        viewModel: TransactionListViewModel(dataProvider: MockDataProvider())
     )
 }

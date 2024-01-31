@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C5EBFFF2B69EE52001CF887 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EBFFE2B69EE52001CF887 /* Font.swift */; };
+		3C5EC0022B69FC42001CF887 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC0012B69FC42001CF887 /* MockDataProvider.swift */; };
+		3C5EC0032B6A0465001CF887 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 52554DBD2B69C8140093BCCD /* data.json */; };
 		3CE213FB2B68E6E8007A1D30 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE213FA2B68E6E8007A1D30 /* RootView.swift */; };
 		3CE214042B68EB17007A1D30 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE214032B68EB16007A1D30 /* TransactionListView.swift */; };
 		3CE214082B68EB68007A1D30 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE214072B68EB68007A1D30 /* FeedView.swift */; };
@@ -36,8 +39,8 @@
 		52BFF2E62B692B9800878C9B /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2E52B692B9800878C9B /* RequestError.swift */; };
 		52BFF2E82B692D1100878C9B /* TransactionEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2E72B692D1100878C9B /* TransactionEndPoints.swift */; };
 		52BFF2EB2B6930B800878C9B /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2EA2B6930B800878C9B /* TransactionList.swift */; };
-		52BFF2EE2B693A7C00878C9B /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2ED2B693A7C00878C9B /* ApiService.swift */; };
-		52BFF2F02B693A9800878C9B /* TransactionDataFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2EF2B693A9800878C9B /* TransactionDataFetchable.swift */; };
+		52BFF2EE2B693A7C00878C9B /* ApiDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2ED2B693A7C00878C9B /* ApiDataProvider.swift */; };
+		52BFF2F02B693A9800878C9B /* TransactionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2EF2B693A9800878C9B /* TransactionDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C5EBFFD2B69ED3A001CF887 /* WorldOfPAYBACK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "WorldOfPAYBACK-Info.plist"; sourceTree = "<group>"; };
+		3C5EBFFE2B69EE52001CF887 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		3C5EC0012B69FC42001CF887 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
 		3CE213FA2B68E6E8007A1D30 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		3CE214032B68EB16007A1D30 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
 		3CE214072B68EB68007A1D30 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
@@ -91,8 +97,8 @@
 		52BFF2E52B692B9800878C9B /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		52BFF2E72B692D1100878C9B /* TransactionEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEndPoints.swift; sourceTree = "<group>"; };
 		52BFF2EA2B6930B800878C9B /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
-		52BFF2ED2B693A7C00878C9B /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		52BFF2EF2B693A9800878C9B /* TransactionDataFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataFetchable.swift; sourceTree = "<group>"; };
+		52BFF2ED2B693A7C00878C9B /* ApiDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDataProvider.swift; sourceTree = "<group>"; };
+		52BFF2EF2B693A9800878C9B /* TransactionDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C5EBFFB2B69E7F5001CF887 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3C5EC0012B69FC42001CF887 /* MockDataProvider.swift */,
+				52BFF2ED2B693A7C00878C9B /* ApiDataProvider.swift */,
+				52BFF2EF2B693A9800878C9B /* TransactionDataProvider.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		3C5EBFFC2B69E81C001CF887 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		3CE213F92B68E6AA007A1D30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +211,7 @@
 		523CD4C02B67DD38007D106D = {
 			isa = PBXGroup;
 			children = (
+				3C5EBFFD2B69ED3A001CF887 /* WorldOfPAYBACK-Info.plist */,
 				523CD4CB2B67DD39007D106D /* Payback */,
 				523CD4DE2B67DD3A007D106D /* PaybackTests */,
 				523CD4E82B67DD3A007D106D /* PaybackUITests */,
@@ -272,6 +296,7 @@
 				52BFF2C82B69272600878C9B /* Color.swift */,
 				52BFF2CA2B6927EC00878C9B /* Date.swift */,
 				52BFF2CC2B69284B00878C9B /* String.swift */,
+				3C5EBFFE2B69EE52001CF887 /* Font.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,8 +348,8 @@
 		52BFF2EC2B693A4F00878C9B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				52BFF2ED2B693A7C00878C9B /* ApiService.swift */,
-				52BFF2EF2B693A9800878C9B /* TransactionDataFetchable.swift */,
+				3C5EBFFB2B69E7F5001CF887 /* API */,
+				3C5EBFFC2B69E81C001CF887 /* Storage */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -437,6 +462,7 @@
 				523CD4D62B67DD3A007D106D /* Preview Assets.xcassets in Resources */,
 				523CD4D32B67DD3A007D106D /* Assets.xcassets in Resources */,
 				3CE214142B68F4ED007A1D30 /* Localizable.xcstrings in Resources */,
+				3C5EC0032B6A0465001CF887 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +494,7 @@
 				52BFF2E42B692B7700878C9B /* HttpMethod.swift in Sources */,
 				52554DB92B69C4CB0093BCCD /* Config.swift in Sources */,
 				52BFF2CD2B69284B00878C9B /* String.swift in Sources */,
-				52BFF2EE2B693A7C00878C9B /* ApiService.swift in Sources */,
+				52BFF2EE2B693A7C00878C9B /* ApiDataProvider.swift in Sources */,
 				3CE214042B68EB17007A1D30 /* TransactionListView.swift in Sources */,
 				52BFF2C92B69272600878C9B /* Color.swift in Sources */,
 				52BFF2CF2B6929C100878C9B /* NetworkMonitor.swift in Sources */,
@@ -481,10 +507,12 @@
 				52BFF2E62B692B9800878C9B /* RequestError.swift in Sources */,
 				523CD4CD2B67DD39007D106D /* PaybackApp.swift in Sources */,
 				52BFF2CB2B6927EC00878C9B /* Date.swift in Sources */,
+				3C5EBFFF2B69EE52001CF887 /* Font.swift in Sources */,
 				52554DBB2B69C4D80093BCCD /* Logger.swift in Sources */,
-				52BFF2F02B693A9800878C9B /* TransactionDataFetchable.swift in Sources */,
+				52BFF2F02B693A9800878C9B /* TransactionDataProvider.swift in Sources */,
 				52BFF2E22B692B6600878C9B /* HttpClient.swift in Sources */,
 				52BFF2C02B69245100878C9B /* TransactionCardView.swift in Sources */,
+				3C5EC0022B69FC42001CF887 /* MockDataProvider.swift in Sources */,
 				52554DB42B69BACC0093BCCD /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,6 +680,7 @@
 				DEVELOPMENT_TEAM = 4J2BT49VC2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WorldOfPAYBACK-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -681,6 +710,7 @@
 				DEVELOPMENT_TEAM = 4J2BT49VC2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WorldOfPAYBACK-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

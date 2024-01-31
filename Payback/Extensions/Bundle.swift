@@ -19,7 +19,7 @@ extension Bundle {
         #endif
     }
     
-    func decode<T: Codable>(_ file: String) -> Swift.Result<T, RequestError> {
+    func decode<T: Decodable>(_ file: String) -> Swift.Result<T, RequestError> {
         guard let url = self.url(forResource: file, withExtension: nil) else {
             return .failure(.custom("Failed to locate \(file) in bundle."))
         }

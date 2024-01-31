@@ -12,10 +12,10 @@ final class TransactionListViewModel: ObservableObject {
     @Published var isRequesting: Bool = false
     @Published var transactions: [Transaction] = []
     
-    let apiService: ApiService
-    
-    init(apiService: ApiService) {
-        self.apiService = apiService
+    let dataProvider: TransactionDataProvider
+
+    init(dataProvider: TransactionDataProvider) {
+        self.dataProvider = dataProvider
     }
     
     func fetchTransactions() {
@@ -24,7 +24,7 @@ final class TransactionListViewModel: ObservableObject {
         
         Task { [weak self] in
             guard let self = self else { return }
-            let response = await apiService.fetchTransactions()
+            let response = await dataProvider.fetchTransactions()
             if case .success(let data) = response {
                 DispatchQueue.main.async {
                     Logger.log(type: .error, "[Response][Data]: \(data)")

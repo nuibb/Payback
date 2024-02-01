@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MockDataProvider: TransactionDataProvider {
+class MockDataProvider: TransactionDataProvider {
     let networkMonitor: NetworkMonitor = NetworkMonitor()
 
     func fetchTransactions() async -> Result<Transactions, RequestError> {

@@ -29,6 +29,7 @@
 		52554DBB2B69C4D80093BCCD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52554DBA2B69C4D80093BCCD /* Logger.swift */; };
 		5293E6CF2B6A85D600E77943 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5293E6CE2B6A85D600E77943 /* Transaction.swift */; };
 		5293E6D12B6A99BD00E77943 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5293E6D02B6A99BD00E77943 /* Double.swift */; };
+		52AFFA102B6B92AA00DDC633 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFFA0F2B6B92AA00DDC633 /* View.swift */; };
 		52BFF2C02B69245100878C9B /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2BF2B69245100878C9B /* TransactionCardView.swift */; };
 		52BFF2C72B6926E100878C9B /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2C62B6926E100878C9B /* Bundle.swift */; };
 		52BFF2C92B69272600878C9B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2C82B69272600878C9B /* Color.swift */; };
@@ -89,6 +90,7 @@
 		52554DBD2B69C8140093BCCD /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		5293E6CE2B6A85D600E77943 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		5293E6D02B6A99BD00E77943 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		52AFFA0F2B6B92AA00DDC633 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		52BFF2BF2B69245100878C9B /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
 		52BFF2C62B6926E100878C9B /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		52BFF2C82B69272600878C9B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				52BFF2CC2B69284B00878C9B /* String.swift */,
 				3C5EBFFE2B69EE52001CF887 /* Font.swift */,
 				5293E6D02B6A99BD00E77943 /* Double.swift */,
+				52AFFA0F2B6B92AA00DDC633 /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 			files = (
 				3CE2140C2B68EBA1007A1D30 /* SettingsView.swift in Sources */,
 				3CE2140E2B68EF89007A1D30 /* TransactionListViewModel.swift in Sources */,
+				52AFFA102B6B92AA00DDC633 /* View.swift in Sources */,
 				52554DB62B69C1240093BCCD /* TransactionDetailsView.swift in Sources */,
 				3CE213FB2B68E6E8007A1D30 /* RootView.swift in Sources */,
 				52BFF2E42B692B7700878C9B /* HttpMethod.swift in Sources */,

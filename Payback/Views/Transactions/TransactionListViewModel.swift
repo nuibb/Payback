@@ -8,14 +8,20 @@
 import Foundation
 
 final class TransactionListViewModel: ObservableObject {
-    @Published var responseMessage: String = ""
+    @Published var toastMessage: String = ""
     @Published var isRequesting: Bool = false
+    @Published var showToast: Bool = false
     @Published var transactions: [Transaction] = []
+    @Published var selectedCategory: String = "Select a category"
     
+    var cachedTransactions: [Transaction] = []
     let dataProvider: TransactionDataProvider
 
     init(dataProvider: TransactionDataProvider) {
         self.dataProvider = dataProvider
+        Utils.after(seconds: 1) {
+            self.fetchTransactions()
+        }
     }
     
     func fetchTransactions() {
@@ -29,7 +35,8 @@ final class TransactionListViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     Logger.log(type: .error, "[Response][Data]: \(data)")
                     self.isRequesting = false
-                    self.transactions = data.items
+                    self.cachedTransactions = data.items
+                    self.transactions = self.cachedTransactions
                 }
             } else if case .failure(let error) = response {
                 Logger.log(type: .error, "[Request] failed: \(error.description)")
@@ -47,10 +54,10 @@ final class TransactionListViewModel: ObservableObject {
     }
     
     func displayMessage(_ msg: String) {
-        responseMessage = msg
+        toastMessage = msg
+        showToast = true
         Utils.after(seconds: 5.0) {
-            self.responseMessage = ""
+            self.toastMessage = ""
         }
     }
-
 }

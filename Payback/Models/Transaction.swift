@@ -10,7 +10,7 @@ import Foundation
 protocol Transaction {
     var id: String { get }
     var displayName: String { get }
-    var type: Int { get }
+    var categoryType: Int { get }
     var bookingDate: Date { get }
     var description: String { get }
     var currency: String { get }
@@ -20,7 +20,7 @@ protocol Transaction {
 extension TransactionItem: Transaction {
     var id: String { alias.reference }
     var displayName: String { partnerDisplayName }
-    var type: Int { category }
+    var categoryType: Int { category }
     var bookingDate: Date {
         transactionDetail?.bookingDate.toDateFromTimezone() ?? Date()
     }

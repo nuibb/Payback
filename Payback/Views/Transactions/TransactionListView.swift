@@ -64,22 +64,31 @@ struct TransactionListView: View {
                 }
                 .padding(.horizontal)
                 
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading) {
-                        ForEach(viewModel.transactions.sorted { $0.bookingDate < $1.bookingDate }, id:\.id) { transaction in
-                            NavigationLink(destination: TransactionDetailsView(transaction: transaction)) {
-                                TransactionCardView(transaction: transaction)
-                                    .padding()
-                                    .background(Color.blue)
-                                    .cornerRadius(8)
+                ZStack {
+                    ScrollView(.vertical, showsIndicators: false) {
+                        LazyVStack(alignment: .leading) {
+                            ForEach(viewModel.transactions.sorted { $0.bookingDate < $1.bookingDate }, id:\.id) { transaction in
+                                NavigationLink(destination: TransactionDetailsView(transaction: transaction)) {
+                                    TransactionCardView(transaction: transaction)
+                                        .padding()
+                                        .background(Color.blue)
+                                        .cornerRadius(8)
+                                }
                             }
                         }
+                        .padding()
                     }
-                    .padding()
+                    .zIndex(0)
+                    
+                    if viewModel.isRequesting {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .purple))
+                            .zIndex(1)
+                    }
                 }
             }
             .navigationBarTitle(Text(String(localized: "Transactions")), displayMode: .inline)
-            .toast(isShowing: $viewModel.showToast, message: viewModel.toastMessage)
+            .showToast(isShowing: $viewModel.showToast, message: viewModel.toastMessage)
         }
     }
 }

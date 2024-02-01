@@ -29,6 +29,9 @@
 		52554DBB2B69C4D80093BCCD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52554DBA2B69C4D80093BCCD /* Logger.swift */; };
 		5293E6CF2B6A85D600E77943 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5293E6CE2B6A85D600E77943 /* Transaction.swift */; };
 		5293E6D12B6A99BD00E77943 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5293E6D02B6A99BD00E77943 /* Double.swift */; };
+		52A86DAA2B6BCCA500BE1116 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A86DA92B6BCCA500BE1116 /* LoaderView.swift */; };
+		52A86DAC2B6BCE3C00BE1116 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A86DAB2B6BCE3C00BE1116 /* ToastView.swift */; };
+		52A86DAE2B6BCE6B00BE1116 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A86DAD2B6BCE6A00BE1116 /* RoundedCorner.swift */; };
 		52AFFA102B6B92AA00DDC633 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFFA0F2B6B92AA00DDC633 /* View.swift */; };
 		52BFF2C02B69245100878C9B /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2BF2B69245100878C9B /* TransactionCardView.swift */; };
 		52BFF2C72B6926E100878C9B /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2C62B6926E100878C9B /* Bundle.swift */; };
@@ -90,6 +93,9 @@
 		52554DBD2B69C8140093BCCD /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		5293E6CE2B6A85D600E77943 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		5293E6D02B6A99BD00E77943 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		52A86DA92B6BCCA500BE1116 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		52A86DAB2B6BCE3C00BE1116 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		52A86DAD2B6BCE6A00BE1116 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		52AFFA0F2B6B92AA00DDC633 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		52BFF2BF2B69245100878C9B /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
 		52BFF2C62B6926E100878C9B /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 		3CE213F92B68E6AA007A1D30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52A86DA82B6BCC8B00BE1116 /* Components */,
 				3CE213FF2B68EA94007A1D30 /* Transactions */,
 				3CE214002B68EA9F007A1D30 /* Feed */,
 				3CE214012B68EAA6007A1D30 /* Shopping */,
@@ -286,6 +293,16 @@
 				52554DBD2B69C8140093BCCD /* data.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		52A86DA82B6BCC8B00BE1116 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				52A86DAB2B6BCE3C00BE1116 /* ToastView.swift */,
+				52A86DA92B6BCCA500BE1116 /* LoaderView.swift */,
+				52A86DAD2B6BCE6A00BE1116 /* RoundedCorner.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		52BFF2C52B6926B600878C9B /* Extensions */ = {
@@ -504,6 +521,8 @@
 				52BFF2E82B692D1100878C9B /* TransactionEndPoints.swift in Sources */,
 				52BFF2E02B692B5700878C9B /* EndPoint.swift in Sources */,
 				5293E6CF2B6A85D600E77943 /* Transaction.swift in Sources */,
+				52A86DAC2B6BCE3C00BE1116 /* ToastView.swift in Sources */,
+				52A86DAE2B6BCE6B00BE1116 /* RoundedCorner.swift in Sources */,
 				3CE214082B68EB68007A1D30 /* FeedView.swift in Sources */,
 				52BFF2C72B6926E100878C9B /* Bundle.swift in Sources */,
 				52BFF2EB2B6930B800878C9B /* Transactions.swift in Sources */,
@@ -517,6 +536,7 @@
 				52BFF2C02B69245100878C9B /* TransactionCardView.swift in Sources */,
 				3C5EC0022B69FC42001CF887 /* MockDataProvider.swift in Sources */,
 				5293E6D12B6A99BD00E77943 /* Double.swift in Sources */,
+				52A86DAA2B6BCCA500BE1116 /* LoaderView.swift in Sources */,
 				52554DB42B69BACC0093BCCD /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,19 +10,11 @@ import SwiftUI
 struct TransactionListView: View {
     @ObservedObject var viewModel: TransactionListViewModel
     
-    var totalAmount: Double {
-        return viewModel.transactions.reduce(0) { (result, element) in
-            return result + (Double(element.amount))
-        }
-    }
-    
-    var types: [Int] {
-        return Array(Set(viewModel.cachedTransactions.compactMap { $0.categoryType })).sorted()
-    }
-    
     var body: some View {
         NavigationView {
             VStack {
+                
+                //MARK: Header Section
                 HStack {
                     Menu {
                         SwiftUI.Button(action: {
@@ -34,12 +26,12 @@ struct TransactionListView: View {
                                 .foregroundColor(.textBlack)
                         }
                         
-                        ForEach(types, id: \.self) { type in
+                        ForEach(viewModel.categories, id: \.self.0) { category in
                             Button(action: {
-                                viewModel.selectedCategory = String(type)
-                                viewModel.transactions = viewModel.cachedTransactions.filter { $0.categoryType == type }
+                                viewModel.selectedCategory = String(category.0)
+                                viewModel.transactions = viewModel.cachedTransactions.filter { $0.categoryType == category.0 }
                             }) {
-                                Text(String(type))
+                                Text(String(category.0))
                             }
                         }
                     } label: {
@@ -64,14 +56,16 @@ struct TransactionListView: View {
                 }
                 .padding(.horizontal)
                 
+                //MARK: Transactions
                 ZStack {
                     ScrollView(.vertical, showsIndicators: false) {
                         LazyVStack(alignment: .leading) {
                             ForEach(viewModel.transactions.sorted { $0.bookingDate < $1.bookingDate }, id:\.id) { transaction in
-                                NavigationLink(destination: TransactionDetailsView(transaction: transaction)) {
+                                let color = getTemplateColor(for: transaction.categoryType)
+                                NavigationLink(destination: TransactionDetailsView(transaction: transaction, color: color)) {
                                     TransactionCardView(transaction: transaction)
                                         .padding()
-                                        .background(Color.blue)
+                                        .background(color)
                                         .cornerRadius(8)
                                 }
                             }
@@ -80,6 +74,7 @@ struct TransactionListView: View {
                     }
                     .zIndex(0)
                     
+                    //MARK: Progress
                     if viewModel.isRequesting {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: .purple))
@@ -88,8 +83,21 @@ struct TransactionListView: View {
                 }
             }
             .navigationBarTitle(Text(String(localized: "Transactions")), displayMode: .inline)
-            .showToast(isShowing: $viewModel.showToast, message: viewModel.toastMessage)
+            .showToast(isShowing: $viewModel.showToast, message: viewModel.toastMessage, color: viewModel.messageColor)
         }
+    }
+}
+
+extension TransactionListView {
+    private var totalAmount: Double {
+        return viewModel.transactions.reduce(0) { (result, element) in
+            return result + (Double(element.amount))
+        }
+    }
+    
+    private func getTemplateColor(for category: Int) -> Color {
+        let color = viewModel.categories.first { $0.0 == category }?.1 ?? Color.blue
+        return color == .white ? .blue : color /// avoiding same foreground and background color to be invisible
     }
 }
 

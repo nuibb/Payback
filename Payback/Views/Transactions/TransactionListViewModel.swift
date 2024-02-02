@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class TransactionListViewModel: ObservableObject {
     @Published var toastMessage: String = ""
+    @Published var messageColor: Color = MessageType.error.color
     @Published var isRequesting: Bool = false
     @Published var showToast: Bool = false
     @Published var transactions: [Transaction] = []
@@ -16,6 +18,7 @@ final class TransactionListViewModel: ObservableObject {
     
     var cachedTransactions: [Transaction] = []
     let dataProvider: TransactionDataProvider
+    var categories: [(Int, Color)] = []
 
     init(dataProvider: TransactionDataProvider) {
         self.dataProvider = dataProvider
@@ -24,7 +27,7 @@ final class TransactionListViewModel: ObservableObject {
         }
     }
     
-    func fetchTransactions() {
+    private func fetchTransactions() {
         
         self.isRequesting = true
         
@@ -35,8 +38,7 @@ final class TransactionListViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     Logger.log(type: .error, "[Response][Data]: \(data)")
                     self.isRequesting = false
-                    self.cachedTransactions = data.items
-                    self.transactions = self.cachedTransactions
+                    self.loadData(data.items)
                 }
             } else if case .failure(let error) = response {
                 Logger.log(type: .error, "[Request] failed: \(error.description)")
@@ -53,7 +55,14 @@ final class TransactionListViewModel: ObservableObject {
         }
     }
     
-    func displayMessage(_ msg: String) {
+    private func loadData(_ items: [Transaction]) {
+        self.cachedTransactions = items
+        self.transactions = self.cachedTransactions
+        /// There is a random chance to have same color for multiple categories for this demo. But in real project, there may have defined categories with defined color
+        self.categories = Array(Set(self.cachedTransactions.compactMap { $0.categoryType })).sorted().map { ($0, Color.random) }
+    }
+    
+    private func displayMessage(_ msg: String) {
         toastMessage = msg
         showToast = true
         Utils.after(seconds: 5.0) {

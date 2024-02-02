@@ -10,6 +10,7 @@ import SwiftUI
 struct ToastModifier: ViewModifier {
     @Binding var isShowing: Bool
     let message: String
+    let color: Color
     let duration: TimeInterval
     
     @ViewBuilder
@@ -26,9 +27,9 @@ struct ToastModifier: ViewModifier {
                         Spacer()
                     }
                     .padding()
+                    .foregroundColor(color)
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .background(Color.white)
-                    .foregroundColor(.red)
                     .cornerRadius(5)
                     .shadow(radius: 5)
                     .onAppear {

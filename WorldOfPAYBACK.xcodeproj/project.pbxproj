@@ -47,6 +47,7 @@
 		52BFF2EB2B6930B800878C9B /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2EA2B6930B800878C9B /* Transactions.swift */; };
 		52BFF2EE2B693A7C00878C9B /* ApiDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2ED2B693A7C00878C9B /* ApiDataProvider.swift */; };
 		52BFF2F02B693A9800878C9B /* TransactionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFF2EF2B693A9800878C9B /* TransactionDataProvider.swift */; };
+		52F603242B6C7B82005F225D /* MessageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F603232B6C7B82005F225D /* MessageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		52BFF2EA2B6930B800878C9B /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		52BFF2ED2B693A7C00878C9B /* ApiDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDataProvider.swift; sourceTree = "<group>"; };
 		52BFF2EF2B693A9800878C9B /* TransactionDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataProvider.swift; sourceTree = "<group>"; };
+		52F603232B6C7B82005F225D /* MessageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 		3CE2140F2B68F139007A1D30 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				52F603222B6C7B5F005F225D /* Controls */,
 				52554DB32B69BACC0093BCCD /* Utils.swift */,
 				52BFF2CE2B6929C100878C9B /* NetworkMonitor.swift */,
 			);
@@ -372,6 +375,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		52F603222B6C7B5F005F225D /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				52F603232B6C7B82005F225D /* MessageControl.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -532,6 +543,7 @@
 				3C5EBFFF2B69EE52001CF887 /* Font.swift in Sources */,
 				52554DBB2B69C4D80093BCCD /* Logger.swift in Sources */,
 				52BFF2F02B693A9800878C9B /* TransactionDataProvider.swift in Sources */,
+				52F603242B6C7B82005F225D /* MessageControl.swift in Sources */,
 				52BFF2E22B692B6600878C9B /* HttpClient.swift in Sources */,
 				52BFF2C02B69245100878C9B /* TransactionCardView.swift in Sources */,
 				3C5EC0022B69FC42001CF887 /* MockDataProvider.swift in Sources */,

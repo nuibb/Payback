@@ -18,10 +18,10 @@ struct TransactionListView: View {
                 HStack {
                     Menu {
                         SwiftUI.Button(action: {
-                            viewModel.selectedCategory = "Select a category"
+                            viewModel.selectedCategory = String(localized: "Select a category")
                             viewModel.transactions = viewModel.cachedTransactions
                         }) {
-                            Text("None")
+                            Text(String(localized:"None"))
                                 .font(.circular(.callout))
                                 .foregroundColor(.textBlack)
                         }
@@ -50,7 +50,7 @@ struct TransactionListView: View {
                     
                     Spacer()
                     
-                    Text("Total Amount: \(totalAmount.formattedValue)")
+                    Text(String(localized:"Total Amount: \(totalAmount.formattedValue)"))
                         .foregroundColor(.primaryColor)
                         .font(.circular(.callout))
                 }

@@ -15,7 +15,7 @@ struct TransactionDetailsView: View {
         VStack(alignment: .center, spacing: 8) {
             
             if !transaction.displayName.isEmpty {
-                Text("Name")
+                Text(String(localized:"Name"))
                     .foregroundColor(.white)
                     .font(.circular(.footnote))
                 
@@ -26,7 +26,7 @@ struct TransactionDetailsView: View {
             }
             
             if !transaction.description.isEmpty {
-                Text("Description")
+                Text(String(localized:"Description"))
                     .foregroundColor(.white)
                     .font(.circular(.footnote))
                 

@@ -14,7 +14,7 @@ final class TransactionListViewModel: ObservableObject {
     @Published var isRequesting: Bool = false
     @Published var showToast: Bool = false
     @Published var transactions: [Transaction] = []
-    @Published var selectedCategory: String = "Select a category"
+    @Published var selectedCategory: String = String(localized: "Select a category")
     
     var cachedTransactions: [Transaction] = []
     let dataProvider: TransactionDataProvider

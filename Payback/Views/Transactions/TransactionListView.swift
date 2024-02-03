@@ -16,43 +16,48 @@ struct TransactionListView: View {
                 
                 //MARK: Header Section
                 HStack {
-                    Menu {
-                        SwiftUI.Button(action: {
-                            viewModel.selectedCategory = String(localized: "Select a category")
-                            viewModel.transactions = viewModel.cachedTransactions
-                        }) {
-                            Text(String(localized:"None"))
-                                .font(.circular(.callout))
-                                .foregroundColor(.textBlack)
-                        }
-                        
-                        ForEach(viewModel.categories, id: \.self.0) { category in
-                            Button(action: {
-                                viewModel.selectedCategory = String(category.0)
-                                viewModel.transactions = viewModel.cachedTransactions.filter { $0.categoryType == category.0 }
+                    
+                    if !viewModel.categories.isEmpty {
+                        Menu {
+                            SwiftUI.Button(action: {
+                                viewModel.selectedCategory = String(localized: "Select a category")
+                                viewModel.transactions = viewModel.cachedTransactions
                             }) {
-                                Text(String(category.0))
+                                Text(String(localized:"None"))
+                                    .font(.circular(.callout))
+                                    .foregroundColor(.textBlack)
                             }
-                        }
-                    } label: {
-                        HStack(alignment: .center, spacing: 8) {
-                            Image("funnel")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 16, height: 16, alignment: .center)
-                                .foregroundColor(.primaryColor)
+                            
+                            ForEach(viewModel.categories, id: \.self.0) { category in
+                                Button(action: {
+                                    viewModel.selectedCategory = String(category.0)
+                                    viewModel.transactions = viewModel.cachedTransactions.filter { $0.categoryType == category.0 }
+                                }) {
+                                    Text(String(category.0))
+                                }
+                            }
+                        } label: {
+                            HStack(alignment: .center, spacing: 8) {
+                                Image("funnel")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 16, height: 16, alignment: .center)
+                                    .foregroundColor(.primaryColor)
 
-                            Text(viewModel.selectedCategory)
-                                .font(.circular(.callout))
-                                .foregroundColor(.primaryColor)
+                                Text(viewModel.selectedCategory)
+                                    .font(.circular(.callout))
+                                    .foregroundColor(.primaryColor)
+                            }
                         }
                     }
                     
                     Spacer()
                     
-                    Text(String(localized:"Total Amount: \(totalAmount.formattedValue)"))
-                        .foregroundColor(.primaryColor)
-                        .font(.circular(.callout))
+                    if let currency = viewModel.transactions.first?.currency, !currency.isEmpty, totalAmount > 0 {
+                        Text(String(localized:"Total Amount: \(totalAmount.formatted(.currency(code: currency).grouping(.automatic)))"))
+                            .foregroundColor(.primaryColor)
+                            .font(.circular(.callout))
+                    }
                 }
                 .padding(.horizontal)
                 
@@ -89,9 +94,9 @@ struct TransactionListView: View {
 }
 
 extension TransactionListView {
-    private var totalAmount: Double {
+    private var totalAmount: Decimal {
         return viewModel.transactions.reduce(0) { (result, element) in
-            return result + (Double(element.amount))
+            return result + element.amount
         }
     }
     
@@ -106,3 +111,10 @@ extension TransactionListView {
         viewModel: TransactionListViewModel(dataProvider: MockDataProvider())
     )
 }
+
+#Preview {
+    TransactionListView(
+        viewModel: TransactionListViewModel(dataProvider: ApiDataProvider())
+    )
+}
+

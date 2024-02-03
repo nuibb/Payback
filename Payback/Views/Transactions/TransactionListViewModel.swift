@@ -27,7 +27,7 @@ final class TransactionListViewModel: ObservableObject {
         }
     }
     
-    private func fetchTransactions() {
+    func fetchTransactions() {
         
         self.isRequesting = true
         
@@ -35,10 +35,16 @@ final class TransactionListViewModel: ObservableObject {
             guard let self = self else { return }
             let response = await dataProvider.fetchTransactions()
             if case .success(let data) = response {
-                DispatchQueue.main.async {
+                
+                // MARK: Delaying mocked server response 1-2 secs and making it fail randomly sometimes
+                Utils.after(seconds: Double.random(in: 1...2)) {
                     Logger.log(type: .error, "[Response][Data]: \(data)")
                     self.isRequesting = false
-                    self.loadData(data.items)
+                    if arc4random_uniform(3) > 0, !data.items.isEmpty {
+                        self.loadData(data.items)
+                    } else {
+                        self.displayMessage(RequestError.custom("Data not available!").description)
+                    }
                 }
             } else if case .failure(let error) = response {
                 Logger.log(type: .error, "[Request] failed: \(error.description)")
@@ -58,6 +64,7 @@ final class TransactionListViewModel: ObservableObject {
     private func loadData(_ items: [Transaction]) {
         self.cachedTransactions = items
         self.transactions = self.cachedTransactions
+        
         /// There is a random chance to have same color for multiple categories for this demo. But in real project, there may have defined categories with defined color
         self.categories = Array(Set(self.cachedTransactions.compactMap { $0.categoryType })).sorted().map { ($0, Color.random) }
     }

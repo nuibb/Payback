@@ -19,20 +19,14 @@ struct TransactionCardView: View {
 
                 Spacer()
 
-                if transaction.amount > 0 {
-                    if !transaction.currency.isEmpty {
-                        Text("\(transaction.currency) ")
-                            .foregroundColor(.white)
-                            .font(.circular(.headline))
-                    }
-                    
-                    Text(String(transaction.amount))
+                if transaction.amount > 0 && !transaction.currency.isEmpty {
+                    Text(transaction.amount.formatted(.currency(code: transaction.currency).grouping(.automatic)))
                         .foregroundColor(.white)
                         .font(.circular(.headline).weight(.bold))
                 }
             }
 
-            Text(transaction.bookingDate.toString())
+            Text(transaction.bookingDate.formatted())
                 .foregroundColor(.white)
                 .font(.circular(.subheadline))
 

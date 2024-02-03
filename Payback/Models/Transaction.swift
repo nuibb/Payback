@@ -14,7 +14,7 @@ protocol Transaction {
     var bookingDate: Date { get }
     var description: String { get }
     var currency: String { get }
-    var amount: Int { get }
+    var amount: Decimal { get } // Using decimal to ensure accuracy for currency
 }
 
 extension TransactionItem: Transaction {
@@ -28,7 +28,7 @@ extension TransactionItem: Transaction {
     var currency: String {
         transactionDetail?.value?.currency ?? ""
     }
-    var amount: Int {
-       max(0, transactionDetail?.value?.amount ?? 0)
+    var amount: Decimal {
+        Decimal(max(0, transactionDetail?.value?.amount ?? 0))
     }
 }

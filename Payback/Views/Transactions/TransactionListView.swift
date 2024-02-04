@@ -43,7 +43,7 @@ struct TransactionListView: View {
                                     .scaledToFit()
                                     .frame(width: 16, height: 16, alignment: .center)
                                     .foregroundColor(.primaryColor)
-
+                                
                                 Text(viewModel.selectedCategory)
                                     .font(.circular(.callout))
                                     .foregroundColor(.primaryColor)
@@ -63,32 +63,63 @@ struct TransactionListView: View {
                 
                 //MARK: Transactions
                 ZStack {
-                    ScrollView(.vertical, showsIndicators: false) {
-                        LazyVStack(alignment: .leading) {
-                            ForEach(viewModel.transactions.sorted { $0.bookingDate < $1.bookingDate }, id:\.id) { transaction in
-                                let color = getTemplateColor(for: transaction.categoryType)
-                                NavigationLink(destination: TransactionDetailsView(transaction: transaction, color: color)) {
-                                    TransactionCardView(transaction: transaction)
-                                        .padding()
-                                        .background(color)
-                                        .cornerRadius(8)
-                                }
-                            }
-                        }
-                        .padding()
-                    }
-                    .zIndex(0)
                     
-                    //MARK: Progress
+                    //MARK: Progress View
                     if viewModel.isRequesting {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: .purple))
                             .zIndex(1)
                     }
+                    
+                    if !viewModel.transactions.isEmpty {
+                        ScrollView(.vertical, showsIndicators: false) {
+                            LazyVStack(alignment: .leading) {
+                                ForEach(viewModel.transactions.sorted { $0.bookingDate < $1.bookingDate }, id:\.id) { transaction in
+                                    let color = getTemplateColor(for: transaction.categoryType)
+                                    NavigationLink(destination: TransactionDetailsView(transaction: transaction, color: color)) {
+                                        TransactionCardView(transaction: transaction)
+                                            .padding()
+                                            .background(color)
+                                            .cornerRadius(8)
+                                    }
+                                }
+                            }
+                            .padding()
+                        }
+                        .zIndex(0)
+                    } else {
+                        if !viewModel.isRequesting {
+                            Text(String(localized:"No Transactions Available!"))
+                                .font(.circular(.callout))
+                                .foregroundColor(.red)
+                                .padding()
+                        }
+                    }
                 }
             }
             .navigationBarTitle(Text(String(localized: "Transactions")), displayMode: .inline)
             .showToast(isShowing: $viewModel.showToast, message: viewModel.toastMessage, color: viewModel.messageColor)
+            .navigationBarItems(trailing: addRightNavButton())
+        }
+    }
+}
+
+extension TransactionListView {
+    @ViewBuilder
+    func addRightNavButton() -> some View {
+        HStack(spacing: 0) {
+            Spacer()
+            
+            SwiftUI.Button(action: {
+                viewModel.fetchTransactions()
+            }) {
+                Image(systemName: "arrow.triangle.2.circlepath")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 24, height: 24, alignment: .center)
+                    .foregroundColor(.primaryColor)
+            }
+            .disabled(viewModel.isRequesting || viewModel.showToast)
         }
     }
 }

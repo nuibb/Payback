@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 final class TransactionListViewModel: ObservableObject {
-    @Published var toastMessage: String = ""
     @Published var messageColor: Color = MessageType.error.color
     @Published var isRequesting: Bool = false
     @Published var showToast: Bool = false
     @Published var transactions: [Transaction] = []
     @Published var selectedCategory: String = String(localized: "Select a category")
     
+    var toastMessage: String = ""
     var cachedTransactions: [Transaction] = []
     let dataProvider: TransactionDataProvider
     var categories: [(Int, Color)] = []
@@ -28,7 +28,6 @@ final class TransactionListViewModel: ObservableObject {
     }
     
     func fetchTransactions() {
-        
         self.isRequesting = true
         
         Task { [weak self] in
@@ -40,9 +39,10 @@ final class TransactionListViewModel: ObservableObject {
                 Utils.after(seconds: Double.random(in: 1...2)) {
                     Logger.log(type: .error, "[Response][Data]: \(data)")
                     self.isRequesting = false
-                    if arc4random_uniform(3) > 0, !data.items.isEmpty {
+                    if Bool.random(), !data.items.isEmpty {
                         self.loadData(data.items)
                     } else {
+                        self.loadData([])
                         self.displayMessage(RequestError.custom("Data not available!").description)
                     }
                 }

@@ -9,10 +9,48 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>WorldOfPAYBACK.xcscheme_^#shared#^_</key>
+		<key>WorldOfPAYBACK-DEMO.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>WorldOfPAYBACK-DEV.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>WorldOfPAYBACK-PROD.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>WorldOfPAYBACK-QA.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>WorldOfPAYBACK.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>523CD4C82B67DD39007D106D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>523CD4DA2B67DD3A007D106D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>523CD4E42B67DD3A007D106D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

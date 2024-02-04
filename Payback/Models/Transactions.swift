@@ -7,9 +7,9 @@
 
 import Foundation
 
-/// MARK: Ensure  sustainable API response handling where any property can be missing from the server
-struct TransactionList: Decodable {
-    let items: [Transaction]
+/// MARK: Handle any kind of missing value/property from the server
+struct Transactions: Decodable {
+    let items: [TransactionItem]
 
     enum CodingKeys: String, CodingKey {
         case items
@@ -17,13 +17,13 @@ struct TransactionList: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        items = try container.decodeIfPresent([Transaction].self, forKey: .items) ?? []
+        items = try container.decodeIfPresent([TransactionItem].self, forKey: .items) ?? []
     }
 }
 
-struct Transaction: Decodable {
+struct TransactionItem: Decodable {
     let partnerDisplayName: String
-    let alias: Alias?
+    let alias: Alias
     let category: Int
     let transactionDetail: TransactionDetail?
 
@@ -34,14 +34,14 @@ struct Transaction: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         partnerDisplayName = try container.decodeIfPresent(String.self, forKey: .partnerDisplayName) ?? ""
-        alias = try container.decodeIfPresent(Alias.self, forKey: .alias)
+        alias = try container.decode(Alias.self, forKey: .alias)
         category = try container.decodeIfPresent(Int.self, forKey: .category) ?? -1
         transactionDetail = try container.decodeIfPresent(TransactionDetail.self, forKey: .transactionDetail)
     }
 }
 
 struct Alias: Decodable {
-    let reference: String?
+    let reference: String
 
     enum CodingKeys: String, CodingKey {
         case reference
@@ -49,7 +49,7 @@ struct Alias: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        reference = try container.decodeIfPresent(String.self, forKey: .reference)
+        reference = try container.decode(String.self, forKey: .reference)
     }
 }
 
@@ -80,7 +80,7 @@ struct Value: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        amount = try container.decodeIfPresent(Int.self, forKey: .amount) ?? -1
+        amount = try container.decodeIfPresent(Int.self, forKey: .amount) ?? 0
         currency = try container.decodeIfPresent(String.self, forKey: .currency) ?? ""
     }
 }

@@ -18,17 +18,17 @@ protocol Endpoint {
 
 extension Endpoint {
     var scheme: String {
-        return "https"
+        return Config.url.scheme
     }
     
     var host: String {
-        return "api.payback.com"
+        return Config.url.host
     }
     
     var header: [String: String] {
         return [
-            //"Authorization": "Bearer \(accessToken)"
-            "Content-Type": "application/json"
+            //"Authorization": "Bearer \(accessToken)",
+            "Content-Type": Config.url.applicationType
         ]
     }
     

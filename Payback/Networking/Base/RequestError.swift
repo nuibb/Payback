@@ -16,6 +16,7 @@ enum RequestError: Error, CustomStringConvertible {
     case unauthorized
     case unexpectedStatusCode
     case networkNotAvailable
+    case custom(String)
     case unknown
     
     var description: String {
@@ -36,6 +37,8 @@ enum RequestError: Error, CustomStringConvertible {
             return "Received an unexpected status code from the server."
         case .networkNotAvailable:
             return "You are in offline mode. Please connect to the internet to proceed."
+        case .custom(let message):
+            return message
         default:
             return "An unknown error occurred."
         }

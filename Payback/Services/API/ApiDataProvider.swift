@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct ApiService: TransactionDataFetchable {
+struct ApiDataProvider: TransactionDataProvider {
     let networkMonitor: NetworkMonitor = NetworkMonitor()
 }

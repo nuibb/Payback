@@ -10,6 +10,9 @@ import SwiftUI
 struct RootView: View {
     var body: some View {
         TabView {
+            
+            /// Injecting dependency for defining data provider based on Schema...
+            /// Mock data for local and API response for DEV/QA/DEMO/PROD environment.
             TransactionListView(
                 viewModel: TransactionListViewModel(
                     dataProvider: Config.shared.getDataProvider()))

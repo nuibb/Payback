@@ -32,6 +32,8 @@ struct Config {
     }
     
     static var baseUrl: String?
+    
+    /// Static base url for each environment
     private enum BaseUrl: String {
         case LOCAL = "localhost.com"//assuming
         case DEV = "api-test.payback.com"
@@ -50,7 +52,7 @@ struct Config {
         }
     }
     
-    // To See in which environment this version of app is building on
+    /// Set the base url for the current environment on which the app is building on currently
     func setupServerConfiguration() {
         #if LOCAL
         Config.baseUrl = BaseUrl.LOCAL.rawValue
@@ -65,6 +67,7 @@ struct Config {
         #endif
     }
     
+    /// Data provider based on environment
     func getDataProvider() -> TransactionDataProvider {
         #if LOCAL
         return MockDataProvider()

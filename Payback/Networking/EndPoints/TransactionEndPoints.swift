@@ -13,7 +13,7 @@ enum TransactionEndPoints: Endpoint {
 
 extension TransactionEndPoints {
     
-    //MARK: path includes a leading '/'
+    // MARK: path includes a leading '/'
     var path: String {
         switch self {
         case .transactions:

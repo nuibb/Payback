@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Using this base protocol throughout the app for transaction purposes
 protocol Transaction {
     var id: String { get }
     var displayName: String { get }

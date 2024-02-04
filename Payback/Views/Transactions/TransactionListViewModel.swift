@@ -39,8 +39,9 @@ final class TransactionListViewModel: ObservableObject {
                 Utils.after(seconds: Double.random(in: 1...2)) {
                     Logger.log(type: .error, "[Response][Data]: \(data)")
                     self.isRequesting = false
-                    if Bool.random(), !data.items.isEmpty {
-                        self.loadData(data.items)
+                    let validTransactions = data.items.filter { !$0.id.isEmpty }
+                    if Bool.random(), !validTransactions.isEmpty {
+                        self.loadData(validTransactions)
                     } else {
                         self.loadData([])
                         self.displayMessage(RequestError.custom("Data not available!").description)
